@@ -11,7 +11,7 @@ public class Variable1 {
 
         final int MAX_SPEED = 20;
 
-        var printVar = "num 변수 값 : %d \nnum + 20 = %d \nage = %10d, maxSpeed = %5d";
-        System.out.printf(printVar, num, sum, age, maxSpeed);
+        var printVar = "num 변수 값 : %d \nnum + 20 = %d \nage = %10d, maxSpeed = %5d, MAX_SPEED = %d";
+        System.out.printf(printVar, num, sum, age, maxSpeed, MAX_SPEED);
     }
 }

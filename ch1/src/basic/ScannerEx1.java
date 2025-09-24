@@ -2,6 +2,9 @@ package basic;
 
 import java.util.Scanner;
 
+//System.in : 키보드 입력
+//System.out : 화면 출력
+
 public class ScannerEx1 {
     public static void main(String[] args) {
         // 키보드에서 입력받기
