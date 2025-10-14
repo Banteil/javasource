@@ -2,11 +2,22 @@ package object;
 
 public class MyMathEx {
     public static void main(String[] args) {
-        MyMath math = new MyMath();
+        // MyMath 인스턴스 생성
+        MyMath myMath = new MyMath();
 
-        System.out.println("덧셈 결과 : " + math.add(12, 23));
-        System.out.println("뺄셈 결과 : " + math.sub(85, 23));
-        System.out.println("곱셈 결과 : " + math.mul(85, 23));
-        System.out.println("나눗셈 결과 : " + math.div(85, 23));
+        // 메소드 호출
+        // 1) 변수에 받기
+        // 2) 출력문
+        long result = myMath.add(12, 63);
+        System.out.println("덧셈결과 : " + result);
+
+        result = myMath.subtract(85, 35);
+        System.out.println("뺄셈결과 : " + result);
+
+        result = myMath.multiply(5, 85);
+        System.out.println("곱셈결과 : " + result);
+
+        double result2 = myMath.divide(8, 3);
+        System.out.println("나눗셈결과 : " + result2);
     }
 }

@@ -1,18 +1,20 @@
 package object;
 
 public class Time {
-    private int hour, minute, second;
-    private final int MAX_HOUR = 23;
-    private final int MAX_MINUTE_OR_SECOND = 59;
-    // 시분초는 모두 0보다 크거나 같아야 함
-    // 시의 범위는 0~23, 분 초의 범위는 0~59
+    private int hour;
+    private int minute;
+    private int second;
 
     public int getHour() {
         return hour;
     }
 
+    // 시,분,초는 모두 0보다 크거나 같아야 한다.
+    // 시의 범위는 0 ~ 23, 분,초의 범위는 0 ~ 59
     public void setHour(int hour) {
-        this.hour = hour > MAX_HOUR ? MAX_HOUR : hour < 0 ? 0 : hour;
+        if (hour < 0 || hour > 23)
+            return;
+        this.hour = hour;
     }
 
     public int getMinute() {
@@ -20,7 +22,9 @@ public class Time {
     }
 
     public void setMinute(int minute) {
-        this.minute = minute > MAX_MINUTE_OR_SECOND ? MAX_MINUTE_OR_SECOND : minute < 0 ? 0 : minute;
+        if (minute < 0 || minute > 59)
+            return;
+        this.minute = minute;
     }
 
     public int getSecond() {
@@ -28,21 +32,9 @@ public class Time {
     }
 
     public void setSecond(int second) {
-        this.second = second > MAX_MINUTE_OR_SECOND ? MAX_MINUTE_OR_SECOND : second < 0 ? 0 : second;
+        if (second < 0 || second > 59)
+            return;
+        this.second = second;
     }
 
-    public void setTime(int hour, int minute, int second) {
-        this.hour = hour > MAX_HOUR ? MAX_HOUR : hour < 0 ? 0 : hour;
-        this.minute = minute > MAX_MINUTE_OR_SECOND ? MAX_MINUTE_OR_SECOND : minute < 0 ? 0 : minute;
-        this.second = second > MAX_MINUTE_OR_SECOND ? MAX_MINUTE_OR_SECOND : second < 0 ? 0 : second;
-    }
-
-    public void printTime() {
-        System.out.printf("%d:%d:%d\n", this.hour, this.minute, this.second);
-    }
-
-    @Override
-    public String toString() {
-        return "Time [hour = " + this.hour + ", minute = " + this.minute + ", second = " + this.second + "]";
-    }
 }

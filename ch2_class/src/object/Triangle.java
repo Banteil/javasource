@@ -1,41 +1,29 @@
 package object;
 
 public class Triangle {
-    // 속성 : 밑변, 높이
-    // 기능 : 삼각형 너비
-    private double baseLine, height;
+    // 속성 : 밑변(baseLine), 높이(height)
+    double baseLine;
+    double height;
 
     public Triangle() {
-
     }
 
-    public Triangle(double base, double height) {
-        this.baseLine = base;
+    public Triangle(double baseLine, double height) {
+        this.baseLine = baseLine;
         this.height = height;
     }
 
+    // 기능 : 삼각형 너비(getArea())
     double getArea() {
         return baseLine * height / 2;
-    }
-
-    public double getBaseLine() {
-        return baseLine;
     }
 
     public void setBaseLine(double baseLine) {
         this.baseLine = baseLine;
     }
 
-    public double getHeight() {
-        return height;
-    }
-
     public void setHeight(double height) {
         this.height = height;
     }
 
-    @Override
-    public String toString() {
-        return "Triangle [baseLine = " + baseLine + ", height = " + height + ", area = " + getArea() + "]";
-    }
 }

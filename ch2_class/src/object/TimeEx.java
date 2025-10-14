@@ -3,9 +3,12 @@ package object;
 public class TimeEx {
     public static void main(String[] args) {
         Time time = new Time();
-        time.setTime(12, 30, 20);
-        time.printTime();
-        time.setHour(30);
-        time.printTime();
+
+        // 시,분,초 지정
+        time.setHour(25);
+        time.setMinute(58);
+        time.setSecond(59);
+
+        System.out.println(time.getHour() + ":" + time.getMinute() + ":" + time.getSecond());
     }
 }

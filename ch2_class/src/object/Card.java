@@ -1,24 +1,22 @@
 package object;
 
-//변수
-//1.인스턴스(속성, 멤버,필드)변수
-//2.클래스 변수
-//3.지역 변수 : 메서드 영역
+// 변수
+
+// 1. 인스턴스(속성, 멤버, 필드) 변수 : 클래스 영역 => 인스턴스 생성 후
+// 2. 클래스 변수 : 클래스 영역(static) => 클래스가 메모리에 올라갈때(공유)
+// 3. 지역 변수 : 메서드 영역, 생성자 매개변수, 생성자 내부 => 변수가 실행될때 
 
 public class Card {
-    // private String kind; // 인스턴스
-    // static String cv; // 클래스
+
+    // private String kind; // 인스턴스 변수
+    // static String cv; // 클래스 변수
 
     // void print(int i) {
-    // int j = 0; // 지역
+    // int j = 0;
     // }
 
     String kind;
     int number;
-    int width = 100;
-    int height = 150;
-
-    public void Info() {
-        System.out.printf("종류 : %s, 번호 : %d, 가로 : %d, 세로 : %d\n", this.kind, this.number, this.width, this.height);
-    }
+    static int width = 100;
+    static int height = 150;
 }
