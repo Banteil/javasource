@@ -18,6 +18,6 @@ public class Value {
 
     @Override
     public String toString() {
-        return;
+        return value + "";
     }
 }
