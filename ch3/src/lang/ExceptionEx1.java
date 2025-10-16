@@ -9,10 +9,15 @@ public class ExceptionEx1 {
         }
 
         try {
-            Class.forName("null");
+            // Class.forName("null");
+            findClass();
         } catch (ClassNotFoundException e1) {
             System.out.println("예외처리 : " + e1.getMessage());
             e1.printStackTrace();
         }
+    }
+
+    public static void findClass() throws ClassNotFoundException {
+        Class.forName("null");
     }
 }
