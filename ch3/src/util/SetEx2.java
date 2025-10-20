@@ -33,5 +33,13 @@ public class SetEx2 {
         // List => Set 변환
         Set<Integer> set2 = new HashSet<>(list);
         System.out.println(set2);
+
+        list.forEach(null);
+        // public static <T extends Comparable<? super T>> void sort(List<T> list)
+        // public static <T extends Comparable<T>> void sort(List<T> list) : T는 Comparable을 구현한 클래스여야 한다.
+        // class Person implements Comparable {}
+        // T : Student
+
+        //<? super T> : Student, Person, Object
     }
 }

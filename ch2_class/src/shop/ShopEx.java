@@ -28,7 +28,7 @@ public class ShopEx {
 
         // User user = new User("홍길동", PayType.CARD);
 
-        MyShop myShop = new MyShop();
+        MyShop2 myShop = new MyShop2();
         myShop.setTitle("내 가게");
         myShop.genUser();
         myShop.genProduct();
