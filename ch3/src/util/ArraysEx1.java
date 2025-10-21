@@ -5,7 +5,7 @@ import java.util.Arrays;
 // java.util.Arrays : 배열을 조작하기 쉽게 다양한 메서드 제공
 //public static <T> T[] copyOf(T[] original, int newLength)
 //static boolean 
-//T, K, V, E : 
+//T, K, V, E : 변수명
 
 public class ArraysEx1 {
     public static void main(String[] args) {
