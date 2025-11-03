@@ -121,24 +121,42 @@ public class ProfessorMain {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public static void select() {
-        String sql = "select * from professor";
-        try {
-            pstmt = con.prepareStatement(sql);
-            rs = pstmt.executeQuery();
+        System.out.print("교수 코드 입력 >> ");
+        String inputId = sc.nextLine();
 
-            while (rs.next()) {
-                String id = rs.getString("prof_id");
-                String name = rs.getString("prof_name");
-                String deptId = rs.getString("dept_id");
-                System.out.printf("%s\t%s\t%s\n", id, name, deptId);
+        try {
+            if (inputId.equals("ALL")) {
+                String sql = "select * from professor";
+                pstmt = con.prepareStatement(sql);
+                rs = pstmt.executeQuery();
+
+                while (rs.next()) {
+                    String id = rs.getString("prof_id");
+                    String name = rs.getString("prof_name");
+                    String deptId = rs.getString("dept_id");
+                    System.out.printf("%s\t%s\t%s\n", id, name, deptId);
+                }
+            } else {
+
+                String sql = "select * from professor where prof_id=?";
+                pstmt = con.prepareStatement(sql);
+                pstmt.setString(1, inputId);
+                rs = pstmt.executeQuery();
+
+                if (rs.next()) {
+                    String id = rs.getString("prof_id");
+                    String name = rs.getString("prof_name");
+                    String deptId = rs.getString("dept_id");
+                    System.out.printf("%s\t%s\t%s\n", id, name, deptId);
+                } else {
+                    System.out.println("해당 코드의 데이터가 존재하지 않습니다.");
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
