@@ -60,6 +60,7 @@ public class JDBCUtil {
 
         // 3. 연결 반환
         con = DriverManager.getConnection(finalUrl, user, password);
+        con.setAutoCommit(false);
     }
 
     public static void commit(Connection con) {

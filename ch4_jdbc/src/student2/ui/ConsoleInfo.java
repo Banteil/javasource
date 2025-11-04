@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import student2.dto.DeptDTO;
 import student2.dto.ProfessorDTO;
+import student2.dto.StudentDTO;
 
 public class ConsoleInfo {
     public DeptDTO setDept(Scanner sc) {
@@ -125,6 +126,72 @@ public class ConsoleInfo {
         System.out.println("--------------------------");
         System.out.print(dto.getProfId() + "\t");
         System.out.print(dto.getProfName() + "\t");
+        System.out.println(dto.getDeptId());
+    }
+
+    public StudentDTO setStudent(Scanner sc) {
+        StudentDTO dto = new StudentDTO();
+
+        System.out.print("학생 코드 입력 >> ");
+        dto.setStudentId(sc.nextLine());
+        System.out.print("이름 입력 >> ");
+        dto.setName(sc.nextLine());
+        System.out.print("키 입력 >> ");
+        dto.setHeight(Double.parseDouble(sc.nextLine()));
+        System.out.print("학과 코드 입력 >> ");
+        dto.setDeptId(sc.nextLine());
+
+        return dto;
+    }
+
+    public StudentDTO updateStudent(Scanner sc) {
+        StudentDTO dto = new StudentDTO();
+
+        System.out.print("학생 코드 입력 >> ");
+        dto.setStudentId(sc.nextLine());
+        System.out.print("수정할 키 입력 >> ");
+        dto.setHeight(Double.parseDouble(sc.nextLine()));
+
+        return dto;
+    }
+
+    public StudentDTO deleteStudent(Scanner sc) {
+        StudentDTO dto = new StudentDTO();
+
+        System.out.print("학생 코드 입력 >> ");
+        dto.setStudentId(sc.nextLine());
+
+        return dto;
+    }
+
+    public String selectStudent(Scanner sc) {
+        System.out.print("학생 코드 입력 >> ");
+        return sc.nextLine();
+    }
+
+    public void printALLStudent(List<StudentDTO> studentList) {
+        System.out.println("\n------전체 학생 정보------");
+        System.out.println("학생번호\t학생명\t키\t학과번호");
+        System.out.println("--------------------------");
+        for (StudentDTO dto : studentList) {
+            System.out.print(dto.getStudentId() + "\t");
+            System.out.print(dto.getName() + "\t");
+            System.out.print(dto.getHeight() + "\t");
+            System.out.println(dto.getDeptId());
+        }
+    }
+
+    public void print(StudentDTO dto) {
+        if (dto == null) {
+            System.out.println("입력한 코드의 학생은 존재하지 않습니다.");
+            return;
+        }
+        System.out.println("\n------학생 정보------");
+        System.out.println("학생번호\t학생명\t키\t학과번호");
+        System.out.println("--------------------------");
+        System.out.print(dto.getStudentId() + "\t");
+        System.out.print(dto.getName() + "\t");
+        System.out.print(dto.getHeight() + "\t");
         System.out.println(dto.getDeptId());
     }
 }
